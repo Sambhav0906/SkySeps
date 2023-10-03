@@ -39,7 +39,7 @@ var tl = gsap.timeline({
         trigger: ".page1 h1",
         scroller: ".main",
         // markers:true,
-        start: "top 20%",
+        start: "top 27%",
         end: "top 0",
      
     }
@@ -75,21 +75,14 @@ var tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".page1 h1",
         scroller: ".main",
-    
-        start: "top -50%",
-        end: "top -390%",
-        scrub: 4
+        start: "top -70%",
+        end: "top -100%",
+        scrub: 3
     }
 })
 tl2.to(".main", {
     backgroundColor: "#fff",
 })
-
-
-
-
-
-
 
 gsap.from(".right h1", {
     y: 900,
@@ -126,16 +119,16 @@ gsap.from(".right p", {
     duration: 1.9
 })
 
-var tl3 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".page1 h1",
-        scroller: ".main",
-        // markers:true,
-        start: "top -220%",
-        end: "top -360%",
-        scrub: 3
-    }
-})
+// var tl3 = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".page1 h1",
+//         scroller: ".main",
+//         // markers:true,
+//         start: "top -50%",
+//         end: "top -360%",
+//         scrub: 4
+//     }
+// })
 
 
 // var tl4 = gsap.timeline({
