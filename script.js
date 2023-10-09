@@ -119,16 +119,15 @@ gsap.from(".right p", {
     duration: 1.9
 })
 
-// var tl3 = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: ".page1 h1",
-//         scroller: ".main",
-//         // markers:true,
-//         start: "top -50%",
-//         end: "top -360%",
-//         scrub: 4
-//     }
-// })
+
+gsap.from(".container h1", {
+    x:  300,
+    rotate: 0,
+    opacity: 0,
+    delay: 1,
+    duration: 0.4
+})
+
 
 
 // var tl4 = gsap.timeline({

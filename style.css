@@ -31,6 +31,18 @@ body {
     flex-direction: column;
 }
 
+.w-100 {
+    width: 100%;
+}
+
+.js-c {
+    justify-content: center;
+}
+
+.js-sb {
+    justify-content: space-between;
+}
+
 
 
 
@@ -165,28 +177,22 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+
 }
 
 
 
-<<<<<<< Updated upstream
-=======
 /*----- page2 -----*/
 
->>>>>>> Stashed changes
 .page2 {
     min-height: 100vh;
     width: 100%;
-    border-bottom: 2px solid #6c6c6c;
+
     position: relative;
     z-index: 9;
     padding-bottom: 50px;
-<<<<<<< Updated upstream
-    margin-top: 11rem;
-    
-=======
+    margin-top: 90px;
 
->>>>>>> Stashed changes
 }
 
 .content-page2 {
@@ -201,6 +207,7 @@ body {
     background-color: #191616;
     align-items: center;
     padding-block: 15px;
+
 }
 
 .text-wrapper h3 {
@@ -243,7 +250,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 47px;
+    padding-top: 117px;
 }
 
 .get-in-touch-btn {
@@ -270,8 +277,9 @@ body {
 .page2 p {
 
     color: #000000;
-    line-height: 55px;
-    font-size: 30px;
+    line-height: 38.9px;
+    font-size: 18px;
+
 
 
 
@@ -328,44 +336,114 @@ button:hover span:after {
 
 .page3 {
     min-height: 100vh;
-    background-image: url(/6226861.jpg)
+    background-image: url(/6226861.jpg);
+    padding: 50px 50px;
 }
 
 
-
-
-
-.page3 h1 {
-    font-size: 6.8vw;
-    font-weight: 300;
-    color: #111;
-    margin-left: 100px;
-}
-
-.page3-part1 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-}
-
-.page3-part1 img {
-    height: 400px;
-    margin-top: 160px;
-}
-
-.page3-part1 video {
-    height: 400px;
-    margin-top: 40px;
-}
-
-
-
-/*----- page4 -----*/
-.page4 {
-    min-height: 100vh;
+.container {
     width: 100%;
-    z-index: 9;
+    height: 100%;
+    padding: 0px 8%;
+  }
+  
+  .container h1 {
+    text-align: center;
+    padding-top: 10%;
+    margin-bottom: 60px;
+    font-weight: 600;
     position: relative;
-    padding: 170px 100px;
+  }
+  
+  .container h1::after {
+    content: '';
+    background: #303ef7;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 60px;
+  }
+  
+  .service {
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .service i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #303ef7;
+  }
+  
+  .service h2 {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .service:hover {
+    background: #303ef7;
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .service:hover i {
+    color: #fff;
+  }
+
+
+  .cta-container {
+    display: flex;
+    background-color: #0074e4; /* Blue background color */
+    color: #fff; /* Text color */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Left div containing text */
+.cta-text {
+    flex: 1;
+}
+
+/* Right div containing the email input */
+.cta-email {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #fff; /* Underline effect */
+    padding-bottom: 5px;
+}
+
+/* Email input field */
+.email-input {
+    border: none;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Right arrow */
+.cta-arrow {
+    margin-left: 10px;
+    cursor: pointer;
 }
