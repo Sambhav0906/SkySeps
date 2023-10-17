@@ -23,7 +23,6 @@ function init() {
     ScrollTrigger.refresh();
 
 }
-
 init()
 
 var crsr = document.querySelector(".cursor")
@@ -33,152 +32,153 @@ document.addEventListener("mousemove",function(dets){
     crsr.style.top = dets.y + 20+"px"
 })
 
-
-var tl = gsap.timeline({
+var page1 = gsap.timeline(
+    {
     scrollTrigger: {
-        trigger: ".page1 h1",
+        trigger: "body",
+        toggleAction: "restart none none pause",
+        // markers: true,
         scroller: ".main",
-        // markers:true,
-        start: "top 27%",
-        end: "top 0",
-     
+        start: "top 40%",
+        end: "top 0%", 
     }
 })
 
-gsap.from(".page1 h1",{
+page1.from(".page1 h1,.page1 h2,.page1 h3",{
+    fontWeight:"100",
     x: -1000,
     rotate: 0,
     opacity: 0,
     delay: 0.4,
-    duration: 0.9
+    duration: 0.9,
+    stagger: 0.4,
+    pin: "true"
 })
 
-gsap.from(".page1 h2", {
-    x: -1000,
-    rotate: 0,
-    opacity: 0,
-    delay: 0.8,
-    duration: 0.9
-})
-
-
-gsap.from(".page1 h3", {
-    x: -1000,
-    rotate: 0,
-    opacity: 0,
-    delay: 1.2,
-    duration: 0.9
-})
-
-
-var tl2 = gsap.timeline({
+var page2Bgc = gsap.timeline({
     scrollTrigger: {
-        trigger: ".page1 h1",
+        trigger: ".page2",
         scroller: ".main",
-        start: "top -70%",
-        end: "top -100%",
-        scrub: 3
+        start: "top 20%",
+        end: "bottom 130%",
+        scrub:1,
+        stagger: 0.4
     }
 })
-tl2.to(".main", {
+
+page2Bgc.to(".main", {
     backgroundColor: "#fff",
+    duration: 2
 })
 
-gsap.from(".right h1", {
-    y: 900,
-    rotate: 0,
-    opacity: 0,
-    delay: 2    ,
-    duration: 1.9
+var page2Content = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".right",
+        scroller: ".main",
+        start: "start 120%",
+        end: "bottom 130%",
+        scrub:5,
+        
+    }
 })
 
-
-gsap.from(".right .get-in-touch-btn", {
-    y: 800,
-    rotate: 0,
+page2Content.from(".right h1,.right p,.text-wrapper h3,.get-in-touch-btn", {
+    y:-100,
+    scale:0.8,
     opacity: 0,
-    delay: 3.4,
-    duration: 2 
-})
-
-
-
-gsap.from(".text-wrapper h3", {
-    y: 800,
-    rotate: 0,
-    opacity: 0,
-    delay: 2.3,
-    duration: 1.9
-})
-
-gsap.from(".right p", {
-    y:  1000,
-    rotate: 0,
-    opacity: 0,
-    delay: 2.1,
-    duration: 1.9
-})
-
-
-gsap.from(".container h1", {
-    x:  300,
-    rotate: 0,
-    opacity: 0,
+    stagger: 0.2,
+    duration:1.7,
     delay: 1,
-    duration: 0.4
+})
+
+
+var page3Bgc = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page3 ",
+        scroller: ".main",
+        start: "top 100%",
+        end: "top 30%",
+        scrub:8
+    }
+})
+
+page3Bgc.from(".page3-heading h1,.Home_line___MWv3" ,{
+    x: -1000,
+    opacity: 0,
+    delay: 0.4,
+    duration: 0.9,
+    stagger: 0.8,
+    scrub:8
 })
 
 
 
-// var tl4 = gsap.timeline({
+var page4Bgc = gsap.timeline({
+    scrollTrigger: {
+        scrollTrigger: {
+            trigger: ".page3 ",
+            scroller: ".main",
+            markers: true,
+            start: "top 100%",
+            end: "top 30%",  
+            scrub:8
+        }
+    }
+})
+
+
+// page4Bgc.from(".stagger-1,.service",{
+//     x: -500,
+//     opacity: 0,
+//     delay: 1,
+//     duration: 0.9,
+//     scrub:5,
+//     stagger: 1.8,
+//     markers: true,
+   
+    
+// })
+
+// var services = gsap.timeline({
 //     scrollTrigger: {
-//         trigger: ".page1 h1",
+//         scrollTrigger: {
+//             trigger: ".service ",
+//             scroller: ".main",
+//             markers: true
+//         }
+//     }
+// })
+
+// services.from(".stagger-1,.service",{
+//     x: -500,
+//     opacity: 0,
+//     delay: 1,
+//     duration: 0.9,
+//     scrub:5,
+//     stagger: 1.8,
+//     markers: true,
+   
+    
+// })
+
+
+
+
+// var page4Bgc = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".page ",
 //         scroller: ".main",
-//         // markers:true,
-//         start: "top -115",
-//         end: "top -140%",
-//         scrub: 3
+//         markers:true,
+//         start: "top 0%",
+//         end: "bottom 20%",
+//         scrub:5,
+//         stagger: 3
 //     }
 // })
 
 
 
 
-tl3.to(".main",{
-    backgroundColor:"#0F0D0D"
-})
-
-
-var boxes = document.querySelectorAll(".box")
-boxes.forEach(function(elem){
-    elem.addEventListener("mouseenter",function(){
-        var att = elem.getAttribute("data-image")
-        crsr.style.width = "470px"
-        crsr.style.height = "370px"
-        crsr.style.borderRadius = "0"
-        crsr.style.backgroundImage = `url(${att})`
-    })
-    elem.addEventListener("mouseleave",function(){
-        elem.style.backgroundColor = "transparent"
-        crsr.style.width = "20px"
-        crsr.style.height = "20px"
-        crsr.style.borderRadius = "50%"
-        crsr.style.backgroundImage = `none`
-    })
-})
-
-var h4 = document.querySelectorAll("#nav h4")
-var purple = document.querySelector("#purple")
-h4.forEach(function(elem){
-    elem.addEventListener("mouseenter",function(){
-        purple.style.display = "block"   
-        purple.style.opacity = "1"
-    })
-    elem.addEventListener("mouseleave",function(){
-        purple.style.display = "none"   
-        purple.style.opacity = "0"
-    })
-})
 
 
 
