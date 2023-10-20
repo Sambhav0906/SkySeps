@@ -37,7 +37,6 @@ var page1 = gsap.timeline(
     scrollTrigger: {
         trigger: "body",
         toggleAction: "restart none none pause",
-        // markers: true,
         scroller: ".main",
         start: "top 40%",
         end: "top 0%", 
@@ -96,85 +95,62 @@ var page3Bgc = gsap.timeline({
     scrollTrigger: {
         trigger: ".page3 ",
         scroller: ".main",
-        start: "top 100%",
-        end: "top 30%",
-        scrub:8
+        start: "top 0%",
+        end: "bottom 100%",
+        markers: true,
+        
+        
     }
 })
 
 page3Bgc.from(".page3-heading h1,.Home_line___MWv3" ,{
-    x: -1000,
+    x: -500,
     opacity: 0,
-    delay: 0.4,
-    duration: 0.9,
-    stagger: 0.8,
-    scrub:8
+    duration: 0.9,  
+    scrub:6,
+    stagger: 0.9,
+    
+    
 })
 
 
-
-var page4Bgc = gsap.timeline({
+var container = gsap.timeline({
     scrollTrigger: {
-        scrollTrigger: {
-            trigger: ".page3 ",
-            scroller: ".main",
-            markers: true,
-            start: "top 100%",
-            end: "top 30%",  
-            scrub:8
-        }
+        trigger: ".container ",
+        scroller: ".main",
+        start: "top 0%",
+        end: "bottom 100%",
+        markers: true,
+        
+        
     }
 })
 
 
-// page4Bgc.from(".stagger-1,.service",{
-//     x: -500,
-//     opacity: 0,
-//     delay: 1,
-//     duration: 0.9,
-//     scrub:5,
-//     stagger: 1.8,
-//     markers: true,
-   
+container.from(".service" ,{
+    y: 100,
+    opacity: 0,
+    duration: 0.5,  
+    scrub:7,
+    stagger: 0.3
     
-// })
-
-// var services = gsap.timeline({
-//     scrollTrigger: {
-//         scrollTrigger: {
-//             trigger: ".service ",
-//             scroller: ".main",
-//             markers: true
-//         }
-//     }
-// })
-
-// services.from(".stagger-1,.service",{
-//     x: -500,
-//     opacity: 0,
-//     delay: 1,
-//     duration: 0.9,
-//     scrub:5,
-//     stagger: 1.8,
-//     markers: true,
-   
-    
-// })
+})
 
 
 
+var footer = gsap.timeline({
+    scrollTrigger: {
+        trigger: "footer",
+        scroller: ".main",
+        start: "top 40%",
+        end: "top 0%",
+       
+        stagger: 2
+    }
+})
 
-// var page4Bgc = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: ".page ",
-//         scroller: ".main",
-//         markers:true,
-//         start: "top 0%",
-//         end: "bottom 20%",
-//         scrub:5,
-//         stagger: 3
-//     }
-// })
+
+
 
 
 
